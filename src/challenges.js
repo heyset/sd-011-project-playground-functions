@@ -31,7 +31,7 @@ function highestCount(numbers) {
   let count = 0;
   let highNumber = getHighestNumber(numbers);
   for(let number of numbers){
-    if(number === numbers){
+    if(number === highNumber){
       count += 1;
     }
   }
