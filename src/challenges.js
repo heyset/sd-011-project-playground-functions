@@ -27,15 +27,16 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(numberslists) {
-  let count = 0;
-  const highNumber = getHighestNumber(numberslist);
-  for(let numberActual of numberslists){
-    if(numberActual === highNumber){
-      count += 1;
+function highestCount(numbers) {
+  let sequence = numbers.sort();
+  let higher = sequence[numbers.length - 1];
+  let regress = 0;
+  for(let index in numbers){
+    if(numbers[index] === higher){
+      regress += 1;
     }
   }
-  return count;
+  return regress;
 }
 
 // Desafio 7
