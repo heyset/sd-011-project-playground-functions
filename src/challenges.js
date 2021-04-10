@@ -51,8 +51,12 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(vect) {
+  let newVect = [];
+  for(let numbers of vect){
+    newVect.push(getWordFromNumber(numbers));
+  }
+  return newVect;
 }
 
 // Desafio 9
