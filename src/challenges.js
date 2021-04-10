@@ -47,10 +47,12 @@ function highestCount(array) {
 }
 function arraytest(test) {
   if (test) {
-    return console.log(highestCount(test));
+    let resultado = console.log(highestCount(test));
   }
   return arraytest;
 }
+let arr = [1, 2, 1];
+console.log(highestCount(arr));
 
 // Desafio 7 -ok
 function catAndMouse(mouse, cat1, cat2) {

@@ -14,7 +14,7 @@ function techList(array, name) {
   return test;
 }
 
-// Desafio 11
+// Desafio 11 - ok
 function numeroZeroNove(array) {
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] < 0 || array[index] > 9) {
@@ -33,7 +33,8 @@ function repeticaoNumero(array) {
     }
     if (contador >= 3) {
       return false;
-    }contador = 0;
+    }
+    contador = 0;
   }
   return true;
 }
@@ -53,7 +54,7 @@ function generatePhoneNumber(array) {
   return generatePhoneNumber(array);
 }
 
-// Desafio 12
+// Desafio 12 - ok
 function triangleCheck(lineA, lineB, lineC) {
   let triaA = lineA < lineB + lineC && lineA > Math.abs(lineB - lineC);
   let triaB = lineB < lineA + lineC && lineB > Math.abs(lineA - lineC);
