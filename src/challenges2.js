@@ -1,6 +1,18 @@
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(technology, name) {
+  let regress = [];
+  let sequence = technology.sort();
+  if(sequence.length != 0){
+    for(let index in sequence){
+      regress[index] = {
+        tech: sequence[index],
+        name: name
+      }
+    }
+    return regress;
+  }else{
+    return 'Vazio!';
+  }
 }
 
 // Desafio 11
