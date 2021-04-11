@@ -53,29 +53,22 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-
-function checker(number) {
-  if (number % 15 === 0) {
-    return 'fizzBuzz';
-  } 
-  if (number % 3 === 0) {
-    return 'fizz';
-  } 
-  if (number % 5 === 0) {
-    return 'buzz';
-  }
-  return 'bug!';
-}
-
 function fizzBuzz(array) {
-  let result = [];
-  for (let number of array) {
-    result.push(checker(number));
-  }
+    let result = [];
+    for (i = 0; i < array.length; i +=1) {
+        if (array[i] % 3 == 0 && array[i] % 5 == 0) {
+            result.push("fizzBuzz");
+        } else if (array[i] % 3 == 0) {
+            result.push("fizz");
+        } else if (array[i] % 5 == 0) {
+            result.push("buzz");
+        } else {
+            result.push("bug!");
+        };
+    }
     return result;
-  }
 }
+
 
 // Desafio 9
 function encode() {
