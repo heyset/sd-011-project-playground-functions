@@ -54,25 +54,25 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz() {
-  function aux(number){
-    if(number % 3 === 0){
-      return 'fizz';
-    }
-    if(number % 5 === 0){
-      return 'buzz';
-    }
-    if(number % 15 === 0){
-      return 'fizzBuzz';
-    }
-    return 'bug!';
+function aux(number) {
+  if (number % 3 === 0) {
+    return 'fizz';
+  } 
+  if (number % 5 === 0) {
+    return 'buzz';
+  } 
+  if (number % 15 === 0) {
+    return 'fizzbuzz';
   }
+  return 'bug!';
+}
 
-  function fizzBuzz(array){
-    let result = [];
-    for(let number of array){
-      result.push(aux(number));
-    }
-    return result;
+function fizzBuzz(vector) {
+  let response = [];
+  for (let number of vector) {
+    response.push(aux(number));
+  }
+    return response;
   }
 }
 
