@@ -21,8 +21,15 @@ function generatePhoneNumber() {
 }
 
 // Desafio 12
-function triangleCheck() {
-  
+//me basiei na solução do colega Vinicio Gouveia turma 11;
+function triangleCheck(lineA, lineB, lineC) {
+  let side1 = Math.abs(lineB + lineC);
+  let side2 = Math.abs(lineB - lineC);
+
+  if(lineA < side1 && lineA > side2){
+    return true;
+  }
+  return false;
 }
 
 // Desafio 13
