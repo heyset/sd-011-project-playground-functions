@@ -37,7 +37,7 @@ function triangleCheck(lineA, lineB, lineC) {
 function hydrate(drinksOrder) {
   let drinksArray = drinksOrder.split(' ').map(Number);
   let waterGlass = 0;
-  for(let index = 0; index = drinksArray.length; index += 1){
+  for(let index = 0; index < drinksArray.length; index += 1){
     if(drinksArray[index] > 0){
       waterGlass += drinksArray[index];
     }
