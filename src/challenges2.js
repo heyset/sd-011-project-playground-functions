@@ -16,8 +16,14 @@ function techList(technology, name) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(numbers, n) {
+  let count = 0;
+  for(let index = 0; index < numbers.length; index += 1){
+    if(numbers[index] === n){
+      count += 1;
+    }
+  }
+  return count;
 }
 
 // Desafio 12
