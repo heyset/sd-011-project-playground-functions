@@ -83,7 +83,7 @@ function encode(letter) {
   return letter;
 }
 function decode(number) {
-  for(let index = 0; index = number.length; index += 1){
+  for(let index = 0; index < number.length; index += 1){
     number = number.replace('1', 'a');
     number = number.replace('2', 'e');
     number = number.replace('3', 'i');
