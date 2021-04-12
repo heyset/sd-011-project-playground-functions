@@ -90,7 +90,7 @@ function numberCheck(phoneNumber) {
   if (checkPhoneNumberLenght(phoneNumber) === false) {
     answer = 'Array com tamanho incorreto';
   } else if (checkPhoneNumberDigits(phoneNumber) === false || checkPhoneNumberRepetitions(phoneNumber) === false) {
-    answer = 'Não é possível gerar um número de telefone com esses valores.'
+    answer = 'não é possível gerar um número de telefone com esses valores';
   } else {
     answer = 'ok';
   }
