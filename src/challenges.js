@@ -53,7 +53,7 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-//para a solução desse desafio tive ajuda de Cristiano Roberto turma 09;
+//para a solução desse desafio tive ajuda de Cristiano Roberto turma 09, obrigado;
 function fizzBuzz(array) {
     let result = [];
     for (i = 0; i < array.length; i +=1) {
