@@ -40,8 +40,7 @@ function checkPhoneNumberLenght(phoneNumber) {
   return isValid;
 }
 
-function checkPhoneNumberDigits(phoneNumber) {
-  let isValid = false;
+function digitsCounter(phoneNumber) {
   let count = 0;
 
   for (let number of phoneNumber) {
@@ -50,7 +49,13 @@ function checkPhoneNumberDigits(phoneNumber) {
     }
   }
 
-  if (count === 0) {
+  return count;
+}
+
+function checkPhoneNumberDigits(phoneNumber) {
+  let isValid = false;
+
+  if (digitsCounter(phoneNumber) === 0) {
     isValid = true;
   } else {
     isValid = false;
@@ -59,23 +64,34 @@ function checkPhoneNumberDigits(phoneNumber) {
   return isValid;
 }
 
-function checkPhoneNumberRepetitions(phoneNumber) {
-  let isValid = false;
+function countRepetitions(phoneNumber, number) {
+  let repetitions = 0;
+
+  for (let index of phoneNumber) {
+    if (index === number) {
+      repetitions += 1;
+    }
+  }
+
+  return repetitions;
+}
+
+function countMostRepeatedNumber(phoneNumber) {
   let mostRepetitions = 0;
 
   for (let number of phoneNumber) {
-    let repetitions = 0;
-
-    for (let index of phoneNumber) {
-      if (index === number) {
-        repetitions += 1;
-      }
-    }
+    let repetitions = countRepetitions(phoneNumber, number);
 
     if (repetitions > mostRepetitions) mostRepetitions = repetitions;
   }
 
-  if (mostRepetitions < 3) {
+  return mostRepetitions;
+}
+
+function checkPhoneNumberRepetitions(phoneNumber) {
+  let isValid = false;
+
+  if (countMostRepeatedNumber(phoneNumber) < 3) {
     isValid = true;
   } else {
     isValid = false;
@@ -89,7 +105,8 @@ function numberCheck(phoneNumber) {
 
   if (checkPhoneNumberLenght(phoneNumber) === false) {
     answer = 'Array com tamanho incorreto';
-  } else if (checkPhoneNumberDigits(phoneNumber) === false || checkPhoneNumberRepetitions(phoneNumber) === false) {
+  } else if (checkPhoneNumberDigits(phoneNumber) === false
+  || checkPhoneNumberRepetitions(phoneNumber) === false) {
     answer = 'não é possível gerar um número de telefone com esses valores';
   } else {
     answer = 'ok';
@@ -116,6 +133,9 @@ function generatePhoneNumber(phoneNumber) {
 
   return answer;
 }
+
+let phoneNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
+console.log(generatePhoneNumber(phoneNumber));
 
 // Desafio 12
 function triangleCheck() {
