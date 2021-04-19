@@ -166,6 +166,10 @@ function hydrate(alcoholicBeverages) {
     sum += number;
   }
 
+  if (sum === 1) {
+    return `${sum} copo de agua`;
+  }
+
   return `${sum} copos de agua`;
 }
 
