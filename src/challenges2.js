@@ -134,13 +134,27 @@ function generatePhoneNumber(phoneNumber) {
   return answer;
 }
 
-let phoneNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
-console.log(generatePhoneNumber(phoneNumber));
-
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function checkLineMesure(lA, lB, lC) {
+  let isSized = false;
+
+  const sumOtherLines = lB + lC;
+  const difOtherLines = Math.abs(lB - lC);
+
+  if (lA < sumOtherLines && lA > difOtherLines) isSized = true;
+
+  return isSized;
 }
+
+function triangleCheck(lineA, lineB, lineC) {
+  const isLineAValid = checkLineMesure(lineA, lineB, lineC);
+  const isLineBValid = checkLineMesure(lineB, lineA, lineC);
+  const isLineCValid = checkLineMesure(lineC, lineA, lineB);
+
+  return isLineAValid && isLineBValid && isLineCValid;
+}
+
+console.log(triangleCheck(10, 14, 8));
 
 // Desafio 13
 function hydrate() {
