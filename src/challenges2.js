@@ -154,11 +154,19 @@ function triangleCheck(lineA, lineB, lineC) {
   return isLineAValid && isLineBValid && isLineCValid;
 }
 
-console.log(triangleCheck(10, 14, 8));
-
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(alcoholicBeverages) {
+  const expression = /\d+/g;
+  const object = alcoholicBeverages.match(expression);
+  let number = 0;
+  let sum = 0;
+
+  for (let index = 0; index < object.length; index += 1) {
+    number = parseInt(object[index], 10);
+    sum += number;
+  }
+
+  return `${sum} copos de agua`;
 }
 
 module.exports = {
