@@ -2,12 +2,12 @@
 function compareTrue(boolean1, boolean2) {
   // seu código aqui
   let comparaVerdade = Boolean
-    if ( boolean1 && boolean2  === true ){
-      comparaVerdade = true
-    }
-    else {
-      comparaVerdade = false
-    }
+  if (boolean1 && boolean2 === true){
+    comparaVerdade = true
+  }
+  else {
+    comparaVerdade = false
+  }
         
   return comparaVerdade
 }
@@ -31,7 +31,7 @@ function splitSentence(sentence) {
 function concatName(arrayName) {
   // seu código aqui
 
-  let firstLastNames = [arrayName[(arrayName.length) - 1], arrayName[0]];
+  let firstLastNames = (arrayName[(arrayName.length) - 1]) + ', ' + (arrayName[0]);
   return firstLastNames;
   }
 
@@ -43,20 +43,65 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
   // seu código aqui
+function findHigherNumber(arrayOfNumbers) {
+  let higherNumber = 0;
+  for (let index = 0; index < arrayOfNumbers.length; index += 1) {
+    if (arrayOfNumbers[index] > higherNumber) {
+      higherNumber = arrayOfNumbers[index];
+    }
+  }
+  return higherNumber;
+}
+function highestCount(arrayOfNumbers) {
+  let countingHigherNumber = 0;
+  for (let index = 0; index < arrayOfNumbers.length; index += 1) {
+    if (arrayOfNumbers[index] === findHigherNumber(arrayOfNumbers)) {
+      countingHigherNumber += 1;
+    }
+  }
+  return countingHigherNumber;
   
 }
-
 // Desafio 7
-function catAndMouse() {
+function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
+    cat1 = Math.abs(mouse - cat1);
+    cat2 = Math.abs(mouse - cat2);
+    if (cat1 === cat2) {
+      return 'os gatos trombam e o rato foge';
+    }
+    if ((cat2) < (cat1)) {
+      return 'cat2';
+    }
+    if ((cat1) < (cat2)) {
+      return 'cat1';
+    }
 }
+
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+// seu código aqui
+  function searchingFizzBuzz(value) {
+    if (value % 15 === 0) {
+      return 'fizzBuzz';
+    }
+    if (value % 3 === 0) {
+      return 'fizz';
+    }
+    if (value % 5 === 0) {
+      return 'buzz';
+    }
+    return 'bug!';
+  }
+  function fizzBuzz(arrayOfNumbers) {
+    let arrayOfFizBuzz = [];
+    for (let index = 0; index < arrayOfNumbers.length; index += 1) {
+      arrayOfFizBuzz.push(searchingFizzBuzz(arrayOfNumbers[index]));
+    }
+    return arrayOfFizBuzz;
 }
+
 
 // Desafio 9
 function encode() {
