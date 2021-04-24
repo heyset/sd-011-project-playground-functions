@@ -17,7 +17,21 @@ function techList(techNamesArray, studentName) {
 
 // Desafio 11
 function generatePhoneNumber() {
-  // seu código aqui
+  let mirror = '(xx) xxxxx-xxxx';
+  array.forEach(function (numero) {
+      mirror = mirror.replace('x', numero);
+  });
+  for(let index = 0; index < array.length; index ++) {
+  if(array.length === 11) {
+    return mirror;
+  } else if (array[index] < 0 || array[index] > 9 || array < 0) {
+    return 'Não é possível gerar um numero de telefone com esses valores'
+  } else {
+  }
+  if(array.length !== 11) {
+    return 'Array com tamanho incorreto'
+  }
+  return arrayNotPossible;
 }
 
 // Desafio 12
