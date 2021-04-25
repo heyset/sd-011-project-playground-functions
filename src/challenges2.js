@@ -82,8 +82,7 @@ function triangleCheck(arestaA, arestaB, arestaC) {
   }
   return true;
 }
-/* ainda não havia sido ensinado alguns conceitos no curso que utilizei nesse codigo no caso a referencia foi : 
-https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+/* ainda não havia sido ensinado alguns conceitos no curso que utilizei nesse codigo no caso a referencia foi: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  para criar uma função closure para o sort assim facilitando o codigo */
 
 // Desafio 13
