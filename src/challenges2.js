@@ -27,16 +27,15 @@ console.log(techList([], 'Thyago'));
 
 function checkRepeat(array) {
   let newArr = [...array].sort();
-  let counter = 0;
-  for (let index = 0; index < newArr.length; index += 1) {
-    if (newArr[index] === newArr[index + 1] && newArr[index] === newArr[index + 2]) {
-      counter += 1;
-    }
-    return counter;
-  }
   if (array.length > 11) {
     return 'Array com tamanho incorreto.';
   }
+  for (let index = 0; index < newArr.length; index += 1) {
+    if (newArr[index] === newArr[index + 1] && newArr[index] === newArr[index + 2]) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function generatePhoneNumber(array) {
