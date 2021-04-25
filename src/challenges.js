@@ -1,6 +1,3 @@
-/* eslint-disable complexity */
-/* eslint-disable max-lines-per-function */
-/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 function compareTrue(value1, value2) {
   // como são testados dois valores booleanos e o operador && ja retorna
@@ -55,91 +52,70 @@ function catAndMouse(mouse, cat1, cat2) {
   let cat2Dist = Math.abs(mouse - cat2);
   if (cat1Dist === cat2Dist) {
     return 'os gatos trombam e o rato foge';
-  } if (cat1Dist < cat2Dist) {
+  }
+  if (cat1Dist < cat2Dist) {
     return 'cat1';
   }
   return 'cat2';
 }
 
 // Desafio 8
-
-// eslint-disable-next-line complexity
-function fizzBuzz(list) {
-  let newList = [];
-  for (let index = 0; index < list.length; index += 1) {
-    if (list[index] % 3 === 0 && list[index] % 5 === 0) {
-      newList.push('fizzBuzz');
-    } else if (list[index] % 3 === 0) {
-      newList.push('fizz');
-    } else if (list[index] % 5 === 0) {
-      newList.push('buzz');
-    } else {
-      newList.push('bug!');
-    }
+function fizzBuzzChecker(integer) {
+  if (integer % 15 === 0) {
+    return 'fizzBuzz';
   }
-  return newList;
+  if (integer % 3 === 0) {
+    return 'fizz';
+  }
+  if (integer % 5 === 0) {
+    return 'buzz';
+  }
+  return 'bug!';
+}
+function fizzBuzz(intArray) {
+  let fizzBuzzArray = [];
+  for (let num of intArray) {
+    fizzBuzzArray.push(fizzBuzzChecker(num));
+  }
+  return fizzBuzzArray;
 }
 
 // Desafio 9
+let dictionary = {
+  a: 1,
+  e: 2,
+  i: 3,
+  o: 4,
+  u: 5,
+  1: 'a',
+  2: 'e',
+  3: 'i',
+  4: 'o',
+  5: 'u',
+};
 
 function encode(frase) {
-  let encodedMessage = '';
-  for (let index = 0; index < frase.length; index += 1) {
-    if (frase[index].toLowerCase() === frase[index]) {
-      switch (frase[index]) {
-      case 'a':
-        encodedMessage += '1';
-        break;
-      case 'e':
-        encodedMessage += '2';
-        break;
-      case 'i':
-        encodedMessage += '3';
-        break;
-      case 'o':
-        encodedMessage += '4';
-        break;
-      case 'u':
-        encodedMessage += '5';
-        break;
-      default:
-        encodedMessage += frase[index];
-      }
+  let encodedSentence = '';
+  for (let chara of frase) {
+    if (dictionary[chara]) {
+      encodedSentence += dictionary[chara];
     } else {
-      encodedMessage += frase[index];
+      encodedSentence += chara;
     }
   }
-  return encodedMessage;
+  return encodedSentence;
 }
 
-function decode(number) {
-  let decodedMessage = '';
-  for (let index = 0; index < number.length; index += 1) {
-    if (number[index].toLowerCase() === number[index]) {
-      switch (number[index]) {
-      case '1':
-        decodedMessage += 'a';
-        break;
-      case '2':
-        decodedMessage += 'e';
-        break;
-      case '3':
-        decodedMessage += 'i';
-        break;
-      case '4':
-        decodedMessage += 'o';
-        break;
-      case '5':
-        decodedMessage += 'u';
-        break;
-      default:
-        decodedMessage += number[index];
-      }
+function decode(frase) {
+  let decodedSentence = '';
+  for (let chara of frase) {
+    if (parseInt(chara, 10) < 6 && parseInt(chara, 10) > 0) {
+      decodedSentence += dictionary[parseInt(chara, 10)];
     } else {
-      decodedMessage += number[index];
+      decodedSentence += chara;
     }
   }
-  return decodedMessage;
+  return decodedSentence;
 }
 
 module.exports = {
@@ -152,4 +128,5 @@ module.exports = {
   fizzBuzz,
   footballPoints,
   highestCount,
-  splitSentence };
+  splitSentence,
+};
