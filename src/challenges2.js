@@ -24,9 +24,35 @@ console.log(techList(['Python'], 'Thyago'));
 console.log(techList([], 'Thyago'));
 
 // Desafio 11
-function generatePhoneNumber() {
-  // escreva seu código aqui
+
+function checkRepeat(array) {
+  let newArr = [...array].sort();
+  let counter = 0;
+  for (let index = 0; index < newArr.length; index += 1) {
+    if (newArr[index] === newArr[index + 1] && newArr[index] === newArr[index + 2]) {
+      counter += 1;
+    }
+    return counter;
+  }
+  if (array.length > 11) {
+    return 'Array com tamanho incorreto.';
+  }
 }
+
+function generatePhoneNumber(array) {
+  for (let numero = 0; numero < array.length; numero += 1) {
+    if (array[numero] < 0 || array[numero] > 9 || checkRepeat(array) >= 3) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+  }
+
+  let validNumber = '(xx) xxxxx-xxxx';
+  array.forEach((index) => {
+    validNumber = validNumber.replace('x', index);
+  });
+  return validNumber;
+}
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
