@@ -19,7 +19,7 @@ function techList(array, nome) {
   }
   return newArr;
 }
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Thyago'));
+console.log(techList(['Jest', 'React', 'HTML', 'CSS', 'JavaScript'], 'Thyago'));
 console.log(techList(['Python'], 'Thyago'));
 console.log(techList([], 'Thyago'));
 
