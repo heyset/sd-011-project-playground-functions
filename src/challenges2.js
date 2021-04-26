@@ -55,6 +55,8 @@ function generatePhoneNumber(array) {
   return telefone;
 }
 
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7]));
+
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   function menorQueSoma() {
@@ -64,7 +66,7 @@ function triangleCheck(lineA, lineB, lineC) {
     return false;
   }
   function maiorQueAbsoluto() {
-    if (lineA > Math.abs(lineB - lineC) && lineB > Math.abs(lineA - lineC) && lineC > Math.abs(lineB - lineA)) {
+    if (lineA > Math.abs(lineB - lineC)) {
       return true;
     }
     return false;
@@ -72,7 +74,7 @@ function triangleCheck(lineA, lineB, lineC) {
   return menorQueSoma() && maiorQueAbsoluto();
 }
 
-console.log(triangleCheck(10, 100, 12));
+console.log(triangleCheck(10, 6, 3));
 
 // Desafio 13
 function hydrate(string) {

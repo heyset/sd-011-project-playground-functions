@@ -26,22 +26,29 @@ function footballPoints(wins, ties) {
   return 3 * wins + ties;
 }
 
-// Desafio 6
-function highestCount(array) {
+function highestNumberFunction(array) {
   let aux = array[0];
-  let contador = 0;
   for (let index = 1; index < array.length; index += 1) {
     if (aux < array[index]) {
       aux = array[index];
     }
   }
+  return aux;
+}
+
+// Desafio 6
+function highestCount(array) {
+  let highestNumber = highestNumberFunction(array);
+  let contador = 0;
   for (let index = 0; index < array.length; index += 1) {
-    if (aux === array[index]) {
+    if (highestNumber === array[index]) {
       contador += 1;
     }
   }
   return contador;
 }
+
+console.log(highestCount([1, 3, 2, 4, 2, 4, 4]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
@@ -61,22 +68,23 @@ function catAndMouse(mouse, cat1, cat2) {
   return 'os gatos trombam e o rato foge';
 }
 
+function modulo(num) {
+  if (num % 3 === 0 && num % 5 === 0) return 'fizzBuzz';
+  if (num % 3 === 0) return 'fizz';
+  if (num % 5 === 0) return 'buzz';
+  return 'bug!';
+}
+
 // Desafio 8
 function fizzBuzz(array) {
   let secondArray = [];
-  for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      secondArray.push('fizzBuzz');
-    } else if (array[index] % 3 === 0) {
-      secondArray.push('fizz');
-    } else if (array[index] % 5 === 0) {
-      secondArray.push('buzz');
-    } else {
-      secondArray.push('bug!');
-    }
+  for (let num of array) {
+    secondArray.push(modulo(num));
   }
   return secondArray;
 }
+
+console.log(fizzBuzz([3, 5, 15, 1]));
 
 // Desafio 9
 function encode(string) {
