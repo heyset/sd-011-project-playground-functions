@@ -38,6 +38,9 @@ function avaliaNumero(tamanho) {
   }
 }
 function generatePhoneNumber(array) {
+  retornar = '';
+  check = true;
+  contador = 0;
   numero = array;
   if (numero.length !== 11) {
     check = false;
