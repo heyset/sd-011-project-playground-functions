@@ -38,10 +38,7 @@ function avaliaNumero(tamanho) {
   }
 }
 function generatePhoneNumber(array) {
-  retornar = '';
-  check = true;
-  contador = 0;
-  numero = array;
+  retornar = ''; check = true; contador = 0; numero = array;
   if (numero.length !== 11) {
     check = false;
     retornar = 'Array com tamanho incorreto.';
@@ -50,7 +47,7 @@ function generatePhoneNumber(array) {
     avaliaNumero(numero.length);
   }
   if (check) {
-    let telefone = ['(', numero[0], numero[1], ')', numero[2], numero[3], numero[4], numero[5],
+    let telefone = ['(', numero[0], numero[1], ') ', numero[2], numero[3], numero[4], numero[5],
       numero[6], '-', numero[7], numero[8], numero[9], numero[10]];
     for (let i = 0; i < telefone.length; i += 1) {
       retornar += telefone[i];
