@@ -1,49 +1,133 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
+function compareTrue(valor1, valor2) {
+  return valor1 && valor2;
 }
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  return (base * height) / 2;
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(frase) {
+  let retorno = [];
+  retorno = frase.split(' ');
+  return retorno;
 }
 
 // Desafio 4
-function concatName() {
+function concatName(frases) {
   // seu código aqui
+  let primeiro = '';
+  let retorno = '';
+  primeiro = frases[frases.length - 1];
+  retorno = `${primeiro}, ${frases[0]}`;
+  return retorno;
 }
 
 // Desafio 5
-function footballPoints() {
+function footballPoints(wins, ties) {
   // seu código aqui
+  return (wins * 3) + (ties * 1);
 }
 
 // Desafio 6
-function highestCount() {
+function highestCount(numeros) {
   // seu código aqui
+  let ordem = numeros.sort();
+  let maior = ordem[numeros.length - 1];
+  let retorno = 0;
+  for (let i = 0; i < numeros.length; i += 1) {
+    if (numeros[i] === maior) {
+      retorno += 1;
+    }
+  }
+  return retorno;
 }
 
 // Desafio 7
-function catAndMouse() {
+function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
+  let distancia1 = Math.abs(mouse - cat1);
+  let distancia2 = Math.abs(mouse - cat2);
+  let retorno = '';
+  if (distancia1 < distancia2) {
+    retorno = 'cat1';
+  } else if (distancia2 < distancia1) {
+    retorno = 'cat2';
+  } else {
+    retorno = 'os gatos trombam e o rato foge';
+  }
+  return retorno;
 }
 
 // Desafio 8
-function fizzBuzz() {
+let retorno = [];
+function retornoPush(numero) {
+  if (numero % 3 === 0 && numero % 5 === 0) {
+    retorno.push('fizzBuzz');
+  } else if (numero % 3 === 0) {
+    retorno.push('fizz');
+  } else if (numero % 5 === 0) {
+    retorno.push('buzz');
+  } else {
+    retorno.push('bug!');
+  }
+}
+
+function fizzBuzz(numeros) {
   // seu código aqui
+  for (let index = 0; index < numeros.length; index += 1) {
+    retornoPush(numeros[index]);
+  }
+  return retorno;
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+let novaFrase = '';
+
+function iOu(ajuda) {
+  if (ajuda === 'i') { novaFrase = novaFrase.replace(ajuda, 3); }
+  if (ajuda === 'o') { novaFrase = novaFrase.replace(ajuda, 4); }
+  if (ajuda === 'u') { novaFrase = novaFrase.replace(ajuda, 5); }
 }
-function decode() {
-  // seu código aqui
+
+function newFrase(ajuda) {
+  if (ajuda === 'a') { novaFrase = novaFrase.replace(ajuda, 1); }
+  if (ajuda === 'e') { novaFrase = novaFrase.replace(ajuda, 2); }
+  iOu(ajuda);
+}
+
+function encode(frase) {
+  novaFrase = frase;
+  for (let index = 0; index < novaFrase.length; index += 1) {
+    let ajuda = novaFrase[index];
+    newFrase(ajuda);
+  }
+  return novaFrase;
+}
+
+let novaFrase2 = '';
+
+function iOuNumeros(ajuda) {
+  if (ajuda === '3') { novaFrase = novaFrase.replace(ajuda, 'i'); }
+  if (ajuda === '4') { novaFrase = novaFrase.replace(ajuda, 'o'); }
+  if (ajuda === '5') { novaFrase = novaFrase.replace(ajuda, 'u'); }
+}
+
+function newFrase2(ajuda) {
+  if (ajuda === '1') { novaFrase2 = novaFrase2.replace(ajuda, 'a'); }
+  if (ajuda === '2') { novaFrase2 = novaFrase2.replace(ajuda, 'e'); }
+  iOuNumeros(ajuda);
+}
+
+function decode(frase) {
+  novaFrase2 = frase;
+  for (let index = 0; index < novaFrase2.length; index += 1) {
+    let ajuda2 = novaFrase2[index];
+    newFrase2(ajuda2);
+  }
+  return novaFrase2;
 }
 
 module.exports = {
