@@ -23,13 +23,17 @@ let retornar = '';
 let check = true;
 let contador = 0;
 let numero = [];
+function calulaContador(i, tamanho2) {
+  for (let j = 0; j < tamanho2; j += 1) {
+    if (numero[i] === numero[j]) {
+      contador += 1;
+    }
+  }
+}
+
 function avaliaNumero(tamanho) {
   for (let i = 0; i < tamanho; i += 1) {
-    for (let j = 0; j < tamanho; j += 1) {
-      if (numero[i] === numero[j]) {
-        contador += 1;
-      }
-    }
+    calulaContador(i, tamanho);
     if (numero[i] < 0 || numero[i] > 9 || contador >= 3) {
       check = false;
       retornar = 'não é possível gerar um número de telefone com esses valores';
@@ -37,6 +41,7 @@ function avaliaNumero(tamanho) {
     contador = 0;
   }
 }
+
 function generatePhoneNumber(array) {
   retornar = ''; check = true; contador = 0; numero = array;
   if (numero.length !== 11) {
