@@ -63,22 +63,23 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 let retorno = [];
-function retornoPush(numero) {
+function retornoPush(numero, index) {
   if (numero % 3 === 0 && numero % 5 === 0) {
-    retorno.push('fizzBuzz');
+    retorno[index] = 'fizzBuzz';
   } else if (numero % 3 === 0) {
-    retorno.push('fizz');
+    retorno[index] = 'fizz';
   } else if (numero % 5 === 0) {
-    retorno.push('buzz');
+    retorno[index] = 'buzz';
   } else {
-    retorno.push('bug!');
+    retorno[index] = 'bug!';
   }
 }
 
 function fizzBuzz(numeros) {
   // seu código aqui
+  retorno = numeros;
   for (let index = 0; index < numeros.length; index += 1) {
-    retornoPush(numeros[index]);
+    retornoPush(numeros[index], index);
   }
   return retorno;
 }
