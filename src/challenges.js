@@ -108,11 +108,10 @@ function encode(frase) {
 }
 
 let novaFrase2 = '';
-
 function iOuNumeros(ajuda) {
-  if (ajuda === '3') { novaFrase = novaFrase.replace(ajuda, 'i'); }
-  if (ajuda === '4') { novaFrase = novaFrase.replace(ajuda, 'o'); }
-  if (ajuda === '5') { novaFrase = novaFrase.replace(ajuda, 'u'); }
+  if (ajuda === '3') { novaFrase2 = novaFrase2.replace(ajuda, 'i'); }
+  if (ajuda === '4') { novaFrase2 = novaFrase2.replace(ajuda, 'o'); }
+  if (ajuda === '5') { novaFrase2 = novaFrase2.replace(ajuda, 'u'); }
 }
 
 function newFrase2(ajuda) {
