@@ -27,7 +27,12 @@ function generatePhoneNumber(numero) {
     retornar = 'Array com tamanho incorreto.';
   } else {
     for (let i = 0; i < numero.length; i += 1) {
-      let contador = numero.split(numero[i]).length - 1;
+      let contador = 0;
+      for (let j = 0; j < numero.length; j += 1) {
+        if (numero[i] === numero[j]) {
+          contador += 1;
+        }
+      }
       if (numero[i] < 0 || numero[i] > 9 || contador >= 3) {
         check = false;
         retornar = 'não é possível gerar um número de telefone com esses valores';
