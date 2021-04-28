@@ -62,7 +62,9 @@ function generatePhoneNumber(array) {
   let phoneNumber = [];
   if (array.length !== 11) {
     phoneNumber = 'Array com tamanho incorreto.';
-  } else if (betweenZeroNine(array) !== true || lessThanThreeReps(array) !== true) {
+  } else if (
+    betweenZeroNine(array) !== true || lessThanThreeReps(array) !== true
+  ) {
     phoneNumber = 'não é possível gerar um número de telefone com esses valores';
   } else {
     phoneNumber = withElevenNumbers(array);
@@ -82,12 +84,19 @@ function triangleCheck(arestaA, arestaB, arestaC) {
   }
   return true;
 }
+
 /* ainda não havia sido ensinado alguns conceitos no curso que utilizei nesse codigo no caso a referencia foi: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  para criar uma função closure para o sort assim facilitando o codigo */
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(orderString) {
+  let countArray = orderString.match(/\d+/g);
+  countArray = countArray.map((count) => parseInt(count, 10));
+  let totalCount = countArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+  if (totalCount === 1) {
+    return '1 copo de água';
+  }
+  return `${totalCount} copos de água`;
 }
 
 module.exports = {
