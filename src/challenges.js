@@ -3,29 +3,18 @@ const compareTrue = (boolean, boolean2) => {
   return boolean && boolean2
 };
 
-console.log(compareTrue(false, false));
 
 // Desafio 2
-const calcArea = (a, b) => {
-  return (a * b) / 2;
-}
-console.log(calcArea(10, 20));
+const calcArea = (a, b) => a * b /2;
+
+
 
 // Desafio 3
-const splitSentence = (str) => {
-  return str.split(" ")
-}
-
-console.log(splitSentence('Vamo que vamo'));
+const splitSentence = (str) => str.split(' ');
 
 // Desafio 4
-const concatName = (str) => {
-  const lastStr = str[str.length - 1];
-  const firstStr = str[0]
-  return lastStr + ', ' + firstStr;
-}
+const concatName = (str) => `${str.pop()}, ${str.shift()}`;
 
-console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5
 const footballPoints = (wins, ties) => {
