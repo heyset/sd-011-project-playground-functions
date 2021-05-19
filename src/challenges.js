@@ -7,124 +7,78 @@ const compareTrue = (boolean, boolean2) => {
 // Desafio 2
 const calcArea = (a, b) => a * b /2;
 
-
-
 // Desafio 3
 const splitSentence = (str) => str.split(' ');
 
 // Desafio 4
 const concatName = (str) => `${str.pop()}, ${str.shift()}`;
 
-
 // Desafio 5
-const footballPoints = (wins, ties) => {
-  const winsAmmount = wins * 3;
-  const tiesAmmount = ties * 1;
-  return winsAmmount + tiesAmmount;
-}
-console.log(footballPoints(1, 2));
+const footballPoints = (wins, ties) => wins * 3 + ties * 1;
 
 // Desafio 6
-const highestCount = (arr) => {
-  let hightestNumber = Math.max.apply(null, arr);
-  let count = 0;
-  
-  for (let i = 0; i < arr.length; i += 1) {
-    if (hightestNumber === arr[i]) {
-      count += 1;
-    }
-  }
+function highestCount(arr) {
+  const max = Math.max(...arr);
+  const count = arr.reduce((acc, cur) => acc + (cur === max),0);
   return count;
 }
-
-console.log(highestCount([0, 0, 0]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   let catAPos = Math.abs(mouse - cat1);
   let catBPos = Math.abs(mouse - cat2);
-  if (catAPos < catBPos) {
-    return "cat1";
-  } else if (catBPos < catAPos) {
-    return "cat2";
-  } else {
-    return "os gatos trombam e o rato foge";
-  }
+  if(catAPos < catBPos) return 'cat1';
+  else if(catAPos > catBPos) return 'cat2';
+  else  return "os gatos trombam e o rato foge";
 }
-console.log(catAndMouse(10, 13, 13));
 
 // Desafio 8
 const fizzBuzz = (arr) => {
-  const arrayFizzBuzz = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
-      arrayFizzBuzz.push("fizzBuzz");
-    } else if (arr[i] % 3 === 0) {
-      arrayFizzBuzz.push("fizz");
-    } else if (arr[i] % 5 === 0) {
-      arrayFizzBuzz.push("buzz");
-    } else {
-      arrayFizzBuzz.push("bug!");
-    }
-  }
-  return arrayFizzBuzz
+  arr.forEach((num) => {
+    (num % 3 === 0 && num % 5 === 0) ? 'FizzBuzz' 
+    :(num % 3 === 0 ) ? 'Buzz' : 'Fizz';
+  });
 }
-
-console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
-function encode(string) {
-  let arrayCode = string.split('');
-  for (index = 0; index < arrayCode.length; index += 1) {
-    if (arrayCode[index] === 'a') {
-      arrayCode.splice(index, 1, '1');
-    }
-    if (arrayCode[index] === 'e') {
-      arrayCode.splice(index, 1, '2');
-    }
-    if (arrayCode[index] === 'i') {
-      arrayCode.splice(index, 1, '3');
-    }
-    if (arrayCode[index] === 'o') {
-      arrayCode.splice(index, 1, '4');
-    }
-    if (arrayCode[index] === 'u') {
-      arrayCode.splice(index, 1, '5');
+function encode(str) {
+  const strArr = str.split('');
+  for (let i = 0; i < strArr.length; i += 1) {
+    if (strArr[i] === 'a') {
+      strArr[i] = 1;
+    } else if (strArr[i] === 'e') {
+      strArr[i] = 2;
+    } else if (strArr[i] === 'i') {
+      strArr[i] = 3;
+    } else if (strArr[i] === 'o') {
+      strArr[i] = 4;
+    } else if (strArr[i] === 'u') {
+      strArr[i] = 5;
     }
   }
-
-  let codedTxt = arrayCode.join('');
-  return codedTxt;
+  return strArr.join('');
 }
 
-console.log(encode("h3 th2r2!"));
+// console.log(encode("hi there!"));
 
 
-function decode(string) {
-  let arrayUnCode = string.split('');
-  for (index = 0; index < arrayUnCode.length; index += 1) {
-    if (arrayUnCode[index] === '1') {
-      arrayUnCode.splice(index, 1, 'a');
-    }
-    if (arrayUnCode[index] === '2') {
-      arrayUnCode.splice(index, 1, 'e');
-    }
-    if (arrayUnCode[index] === '3') {
-      arrayUnCode.splice(index, 1, 'i');
-    }
-    if (arrayUnCode[index] === '4') {
-      arrayUnCode.splice(index, 1, 'o');
-    }
-    if (arrayUnCode[index] === '5') {
-      arrayUnCode.splice(index, 1, 'u');
+function decode(str) {
+  const strArr = str.split('');
+  for (let i = 0; i < strArr.length; i += 1) {
+    if (strArr[i] === '1') {
+      strArr[i] = 'a';
+    } else if (strArr[i] === '2') {
+      strArr[i] = 'e';
+    } else if (strArr[i] === '3') {
+      strArr[i] = 'i';
+    } else if (strArr[i] === '4') {
+      strArr[i] = 'o';
+    } else if (strArr[i] === '5') {
+      strArr[i] = 'u';
     }
   }
-
-  let codedTxt = arrayUnCode.join('');
-  return codedTxt;
+  return strArr.join('');
 }
-
-console.log(decode("h3 th2r2"));
 
 module.exports = {
   calcArea,
