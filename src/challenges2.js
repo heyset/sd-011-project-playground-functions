@@ -93,3 +93,28 @@ module.exports = {
   hydrate,
   triangleCheck,
 };
+
+
+// // Desafio 10
+// function techList(arr, name) {
+//   // seu código aqui
+//   return arr.sort().reduce((acc, curr) => acc.concat({tech: curr, name}),[])
+// }
+
+// // Desafio 11
+// function generatePhoneNumber(arr) {
+//   // seu código aqui
+//   return arr.length !== 11 ? "Array com tamanho incorreto." : arr.some((value) => value < 0 || value > 9 || arr.filter((value1) => value1 === value).length > 2) ? "não é possível gerar um número de telefone com esses valores" : `(${arr.slice(0,2).join('')}) ${arr.slice(2,7).join('')}-${arr.slice(7,11).join('')}`;
+// }
+
+// // Desafio 12
+// function triangleCheck(lineA, lineB, lineC) {
+//   // seu código aqui
+//   return lineA < lineB + lineC && lineA > Math.abs(lineB - lineC);
+// }
+
+// // Desafio 13
+// function hydrate(string) {
+//   // seu código aqui
+//   return string.split(' ').map(Number).filter(Number).reduce((acc, curr) => acc + curr , 0) === 1 ? `1 copo de água` : `${string.split(' ').map(Number).filter(Number).reduce((acc, curr) =>  acc + curr, 0)} copos de água`;
+// }

@@ -24,120 +24,51 @@ function footballPoints(wins, ties) {
   return wins * 3 + ties;
 }
 
-function highestNumberArray(arr) {
-  let hgNumber = arr[0];
-  for (let index = 0; index < arr.length; index += 1) {
-    if (hgNumber < arr[index]) {
-      hgNumber = arr[index];
-    }
-  }
-  return hgNumber;
-}
-
 // Desafio 6
 function highestCount(arrNumbers) {
-  let highestNumber = highestNumberArray(arrNumbers);
-  let count = 0;
-  for (let index = 0; index < arrNumbers.length; index += 1) {
-    if (highestNumber === arrNumbers[index]) {
-      count += 1;
-    }
-  }
-  return count;
+  return arrNumbers.filter((value, _, arr) => value === Math.max(...arr)).length;
 }
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let cat1Position = Math.abs(mouse - cat1);
-  let cat2Position = Math.abs(mouse - cat2);
-
-  if (cat1Position > cat2Position) return 'cat2';
-  if (cat1Position < cat2Position) return 'cat1';
-  return 'os gatos trombam e o rato foge';
-}
-
-function fbDivider(num) {
-  if ((num % 3 === 0) && (num % 5 === 0)) return 'fizzBuzz';
-  if (num % 3 === 0) return 'fizz';
-  if (num % 5 === 0) return 'buzz';
-  return 'bug!';
+  const cat1Position = Math.abs(mouse - cat1);
+  const cat2Position = Math.abs(mouse - cat2);
+  return cat1Position > cat2Position ? 'cat2' :
+    cat1Position < cat2Position  ? 'cat1'
+    : 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
-function fizzBuzz(numbersArr) {
-  let fizzBuzzArr = [];
-
-  for (let num of numbersArr) {
-    fizzBuzzArr.push(fbDivider(num));
-  }
-  return fizzBuzzArr;
-}
-
-function changeLetter(letter) {
-  if (letter === 'a') {
-    return '1';
-  }
-  if (letter === 'e') {
-    return '2';
-  }
-  if (letter === 'i') {
-    return '3';
-  }
-  if (letter === 'o') {
-    return '4';
-  }
-  return '5';
-}
-
-function changeNumber(number) {
-  if (number === '1') {
-    return 'a';
-  }
-  if (number === '2') {
-    return 'e';
-  }
-  if (number === '3') {
-    return 'i';
-  }
-  if (number === '4') {
-    return 'o';
-  }
-  return 'u';
-}
-
-function identifyVowal(letter) {
-  let arrayVowel = ['a', 'e', 'i', 'o', 'u'];
-  for (let index = 0; index < arrayVowel.length; index += 1) {
-    if (letter === arrayVowel[index]) {
-      return letter;
-    }
-  }
+function fizzBuzz(arr) {
+  return arr.map((value) => {
+    return (value % 3 === 0) & (value % 5 === 0) ? 'fizzBuzz' :
+      value % 3 === 0 ? 'fizz' :
+      value % 5 === 0 ? 'buzz' :
+      'buzz';
+  });
 }
 
 // Desafio 9
 function encode(phrase) {
-  let newString = '';
-
-  for (let index = 0; index < phrase.length; index += 1) {
-    if (identifyVowal(phrase.charAt(index))) {
-      newString += changeLetter(phrase.charAt(index));
-    } else {
-      newString += phrase.charAt(index);
-    }
-  }
-  return newString;
+  return phrase.split('').map((value) => {
+    return value === 'a' ? '1' :
+      value === 'e' ? '2' :
+      value === 'i' ? '3' :
+      value === 'o' ? '4' :
+      value === 'u' ? '5' :
+      value;
+  }).join('');
 }
 
 function decode(phrase) {
-  let newString = '';
-  for (let index = 0; index < phrase.length; index += 1) {
-    if (phrase.charAt(index) > 0 && phrase.charAt(index) < 6) {
-      newString += changeNumber(phrase.charAt(index));
-    } else {
-      newString += phrase.charAt(index);
-    }
-  }
-  return newString;
+  return phrase.split('').map((value) => {
+    return value === '1' ? 'a' :
+      value === '2' ? 'e' :
+      value === '3' ? 'i' :
+      value === '4' ? 'o' :
+      value === '5' ? 'u' :
+      value;
+  }).join('');
 }
 
 module.exports = {
