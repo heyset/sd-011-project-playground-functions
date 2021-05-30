@@ -28,7 +28,7 @@ const reapitingNumber = (arrayNumbers) => {
 
 function generatePhoneNumber(arrayNumbers) {
   if (arrayNumbers.length !== 11) return 'Array com tamanho incorreto.';
-  if (reapitingNumber(arrayNumbers) !== false) return 'não é possível de telefone com esses valores';
+  if (reapitingNumber(arrayNumbers) !== false) return 'não é possível gerar um número de telefone com esses valores';
   return arrayNumbers.reduce((acc, number) => {
     if (acc.length === 3) acc += ') ';
     if (acc.length === 10) acc += '-';
@@ -37,7 +37,6 @@ function generatePhoneNumber(arrayNumbers) {
     return acc;
   }, '(');
 }
-console.log((generatePhoneNumber([1, 2, 0, 2, 5, 6, 7, 8, 9, 0, 1])));
 // const teste = generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 8]);
 // Desafio 12
 function triangleCheck() {
