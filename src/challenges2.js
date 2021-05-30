@@ -2,9 +2,11 @@ function techList(listTech, name) {
   if (listTech.length === 0) {
     return 'Vazio!';
   }
-  return listTech.map((tech) => ({ tech, name }));
+  return listTech.sort()
+    .map((tech) => ({ tech, name }));
 }
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
+// console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
+
 // Desafio 11
 
 const reapitingNumber = (arrayNumbers) => {

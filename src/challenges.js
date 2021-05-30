@@ -29,7 +29,7 @@ function highestCount(arrayDeNumeros) {
       return acc;
     }, 0);
 }
-// console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
@@ -69,7 +69,7 @@ function encode(string) {
     newString = newString.replace('i', '3');
     newString = newString.replace('o', '4');
     newString = newString.replace('u', '5');
-    console.log(letra);
+    // console.log(letra);
   }
   return newString;
 }
@@ -83,7 +83,7 @@ function decode(string) {
     newString = newString.replace('3', 'i');
     newString = newString.replace('4', 'o');
     newString = newString.replace('5', 'u');
-    console.log(index);
+    // console.log(index);
   }
   return newString;
 }
