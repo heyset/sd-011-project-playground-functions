@@ -23,13 +23,13 @@ const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 6
 function highestCount(arrayDeNumeros) {
-  return arrayDeNumeros.sort((a, b) => a < b)
+  const test = arrayDeNumeros.sort((a, b) => a < b)
     .reduce((acc, number) => {
-      acc = arrayDeNumeros[0] === number ? acc += 1 : acc;
+      acc = arrayDeNumeros[0] === number ? acc += 1 : acc + 0;
       return acc;
     }, 0);
+  return test;
 }
-console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
