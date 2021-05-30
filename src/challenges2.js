@@ -41,9 +41,14 @@ function generatePhoneNumber(arrayNumbers) {
 }
 // const teste = generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 8]);
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  const differenceA = Math.abs(lineB - lineC);
+  const differenceB = Math.abs(lineA - lineC);
+  const differenceC = Math.abs(lineA - lineB);
+  if (lineA > differenceA && lineB > differenceB && lineC > differenceC) return true;
+  return false;
 }
+console.log(triangleCheck(1, 1, 120));
 
 // Desafio 13
 function hydrate() {
