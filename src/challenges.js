@@ -102,12 +102,36 @@ function catAndMouse(mouse, cat1, cat2) {
   // return distCat1 < distCat2 ? 'cat1' : 'cat2';
 }
 
-console.log(catAndMouse(6, 1, 8));
+// console.log(catAndMouse(6, 1, 8));
+
+/*
+  SOLUCAO 01 (Nikolas Silva):
+  const result = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+      result.push('fizzBuzz');
+    }
+    else if (array[index] % 3 === 0) {
+      result.push('fizz');
+    }
+    else if (array[index] % 5 === 0) {
+      result.push('buzz');
+    }
+    else {
+      result.push('bug!');
+    }
+  }
+
+  return result;
+*/
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(array) {
+  // array.map((number) => number % 3 === 0 ? 'fizz' : number);
 }
+
+console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
 function encode() {
