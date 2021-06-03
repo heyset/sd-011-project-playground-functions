@@ -40,9 +40,42 @@ function footballPoints(wins, ties) {
 // console.log(footballPoints(0, 0));
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+
+/*
+  SOLUCAO 01 (Ana Kyotoku):
+  const highestNumber = array.reduce(
+    (highest, number) => (highest > number ? highest : number),
+  );
+
+  const counter = array.reduce(
+    (acc, number) => (number === highestNumber ? acc + 1 : acc),
+    0,
+  );
+
+  return counter;
+*/
+
+function highestCount(array) {
+  /* SOLUCAO 02 (Ory e Bom Dia Vitor): */
+  let highestNumber = array[0];
+  let repeatValue = 0;
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] > highestNumber) {
+      highestNumber = array[index];
+    }
+  }
+
+  for (let countIndex = 0; countIndex < array.length; countIndex += 1) {
+    if (highestNumber === array[countIndex]) {
+      repeatValue += 1;
+    }
+  }
+
+  return repeatValue;
 }
+
+// console.log(highestCount([0, 0, 0]));
 
 // Desafio 7
 function catAndMouse() {
