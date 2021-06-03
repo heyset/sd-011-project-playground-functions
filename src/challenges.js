@@ -84,9 +84,25 @@ function highestCount(array) {
 // console.log(highestCount([0, 0, 0]));
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+/* SOLUCAO: Thiago Cavalcante */
+function catAndMouse(mouse, cat1, cat2) {
+  let distCat1 = Math.abs(mouse - cat1);
+  let distCat2 = Math.abs(mouse - cat2);
+
+  if (distCat1 === distCat2) {
+    return 'os gatos trombam e o rato foge';
+  }
+
+  if (distCat1 < distCat2) {
+    return 'cat1';
+  }
+
+  return 'cat2';
+
+  // return distCat1 < distCat2 ? 'cat1' : 'cat2';
 }
+
+console.log(catAndMouse(6, 1, 8));
 
 // Desafio 8
 function fizzBuzz() {
