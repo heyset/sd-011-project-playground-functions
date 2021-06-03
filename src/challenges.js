@@ -127,19 +127,42 @@ function catAndMouse(mouse, cat1, cat2) {
 */
 
 // Desafio 8
-function fizzBuzz(array) {
-  // array.map((number) => number % 3 === 0 ? 'fizz' : number);
+// SOLUCAO 02 (Brunao e Alberto):
+
+/* function fizzBuzz(array) {
+  const result = array
+    .map((number) => (number % 15 === 0) ? 'fizzBuzz' : number)
+    .map((number) => (number % 3 === 0) ? 'fizz' : number)
+    .map((number) => (number % 5 === 0) ? 'buzz' : number)
+    .map((number) => typeof(number) === 'number' ? 'bug!' : number);
+
+  return result;
 }
 
-console.log(fizzBuzz([9, 25]));
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
+*/
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+// SOLUCAO 01 (Arthur e Rodolfo):
+/* function encode(string) {
+  string = string.replace(/a/gi, 1);
+  string = string.replace(/e/gi, 2);
+  string = string.replace(/i/gi, 3);
+  string = string.replace(/o/gi, 4);
+  string = string.replace(/u/gi, 5);
+
+  return string;
 }
-function decode() {
-  // seu código aqui
+
+console.log(encode("hi there! Rodolfo manda muito bem no map"));
+
+function decode(string) {
+  return string.split('')
+    .map((value) => value === '1' ? 'a' : value === '2' ? 'e' : value === '3' ? 'i' : value === '4' ? 'o' : value === '5' ? 'u' : value).join('');
 }
+
+console.log(decode('h3 th2r2! R4d4lf4 m1nd1 m53t4 b2m n4 m1p'));
+*/
 
 module.exports = {
   calcArea,
