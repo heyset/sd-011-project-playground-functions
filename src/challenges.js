@@ -55,10 +55,10 @@ function footballPoints(wins, ties) {
   return counter;
 */
 
-function highestCount(array) {
-  /* SOLUCAO 02 (Ory e Bom Dia Vitor): */
+/* SOLUCAO 02 (Ory e Bom Dia Vitor): */
+// Para boas praticas podemos chamar a function mimosa de getHighestNumber
+function mimosa(array) {
   let highestNumber = array[0];
-  let repeatValue = 0;
 
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] > highestNumber) {
@@ -66,8 +66,14 @@ function highestCount(array) {
     }
   }
 
+  return highestNumber;
+}
+
+function highestCount(array) {
+  let repeatValue = 0;
+
   for (let countIndex = 0; countIndex < array.length; countIndex += 1) {
-    if (highestNumber === array[countIndex]) {
+    if (mimosa(array) === array[countIndex]) {
       repeatValue += 1;
     }
   }
