@@ -24,18 +24,18 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(a) {
+function getHighestNumbers(a) {
   let highestNum = 0;
   for (let i of a) {
-    if (i > highestNum) {
-      highestNum = i;
-    }
+    if (i > highestNum) highestNum = i;
   }
+  return highestNum;
+}
+function highestCount(a) {
   let count = 0;
-  for (let index of a) {
-    if (a[index] === highestNum) {
-      count += 1;
-    }
+  let highest = getHighestNumbers(a);
+  for (let num of a) {
+    if (num === highest) count += 1;
   }
   return count;
 }
@@ -53,8 +53,19 @@ function catAndMouse(cat1, cat2, mouse) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function getFizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) return 'fizzBuzz';
+  if (num % 3 === 0) return 'fizz';
+  if (num % 5 === 0) return 'buzz';
+  return 'bug!';
+}
+
+function fizzBuzz(arrayNum) {
+  // eslint-disable-next-line sonarjs/no-unused-collection
+  let result = [];
+  for (let num of arrayNum) {
+    result.push(getFizzBuzz(num));
+  }
 }
 
 // Desafio 9
