@@ -69,11 +69,32 @@ function fizzBuzz(arrayNum) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  let characters = string.split('');
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let decoded = [];
+  for (let character of characters) {
+    if (vowels.indexOf(character) >= 0) decoded.push(vowels.push(character) + 1);
+    else decoded.push(character);
+  }
+  return decoded.join('');
 }
-function decode() {
-  // seu código aqui
+
+function decode(decodedString) {
+  let decodedArray = decodedString.split('');
+  let vowels = {
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
+  let character2 = [];
+  for (let character of decodedArray) {
+    if (Object.keys(vowels).indexOf(character) >= 0) character2.push(vowels[character]);
+    else character.push(character);
+  }
+  return character2.join('');
 }
 
 module.exports = {
